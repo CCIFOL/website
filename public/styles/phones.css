@@ -1,0 +1,144 @@
+#menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #005f9a;
+    color: #fff;
+    padding: 10px;
+    flex-direction: column;
+    position: absolute;
+    opacity: 80%;
+    margin-top: 20px;
+    top: 0;
+    width: 100vw;
+    z-index: 1;
+}
+.pslides
+{
+    display: none;
+}
+.lslides
+{
+    display: none;
+}
+.mySlides
+{
+    z-index: 0;
+}
+header
+{
+    position: relative;
+}
+#menu
+{
+    display: none;
+    
+}
+
+.navigations a {
+    text-decoration: none;
+    color: #fff;
+}
+@media only screen and (min-width: 768px) {
+    #menu
+    {
+        display: none;
+    }
+    #menu_b, #menu_bx {
+        display: none;
+    }
+    .images
+    {
+        width: 560px;
+    }
+    .lslides
+    {
+        display: block;
+    }
+    
+}
+
+
+
+/* Media query for smaller devices like phones */
+@media only screen and (max-width: 768px) {
+    .navigations {
+        flex-direction: column;
+        -ms-flex-align: center;
+    }
+    .core
+    {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .mi
+    {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+
+    }
+    #menu_b
+    {
+        top: 30px;
+        position: absolute;
+        width: 0px;
+        height: 0px;
+        font-size: x-large;
+        right: 40px;
+    }
+    #menu_bx
+    {
+        position: absolute;
+        width: 0px;
+        height: 0px;
+        font-size: x-large;
+        right: 60px;
+    }
+    .divee {
+        flex-direction: column;
+    }
+
+    .adcontainer {
+        flex-direction: column;
+    }
+    #menuu
+    {
+        display: none;
+    }
+    .motivation
+    {
+        flex-direction: column;
+    }
+    .missions
+    {
+        display: flex;
+        flex-direction: column;
+    }
+    .missions span
+    {
+        width: 100%;
+    }
+
+    .motivation div
+    {
+        width: 100%;
+    }
+    .images
+    {   
+        display: none;
+        
+    }
+    .pslides
+    {
+        display: block;
+    }
+    .ministry-item {
+
+        max-width: 100%;
+    }
+    .help-faqs-section,
+    .contact-section {
+        width: 90%;
+    }
+}

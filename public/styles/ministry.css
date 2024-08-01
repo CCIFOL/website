@@ -1,0 +1,88 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+main {
+    padding-top: 80px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+/* Sections */
+.motivations {
+
+    margin: 20px 0;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+}
+.motivation {
+    background: #fff;
+    margin: 20px 0;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+}
+
+.motivation .dive {
+    flex: 1;
+}
+
+.motivation h1 {
+    color: #3498db;
+    font-size: 28px;
+}
+
+.motivation p {
+    font-size: 18px;
+    color: #666;
+}
+
+.motivation img.images {
+    width: 300px;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.large_text h1 {
+    font-size: 36px;
+    color: #2c3e50;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+
+    .motivation {
+        flex-direction: column;
+    }
+
+    .motivation img.images {
+        width: 100%;
+        height: auto;
+    }
+
+    .divee {
+        flex-direction: column;
+    }
+}

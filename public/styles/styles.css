@@ -1,0 +1,156 @@
+.log
+{
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: hsla(0, 0%, 100%, 0.808);
+    transition: 1.5s;
+    align-items: center;
+}
+.log:hover
+{
+    transition: 1.5s;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: hsla(204, 100%, 90%, 0.808);
+    border: 1px solid #696969; 
+    box-shadow: 0 10px 20px rgb(125, 123, 123); 
+    align-items: center;
+}
+.head2
+{
+
+    justify-content: center;
+
+}
+
+.lo 
+{
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+    border-radius: 10px;
+    background-image: url('img/bac2.jpeg'); /* Replace 'background-image.jpg' with your image file */
+    background-size: cover; /* Cover the entire viewport */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-attachment: fixed; /* Fixed background while scrolling */
+   /* margin: 50px auto;  Center the section and adjust margins as needed */
+    align-items: center;
+
+    width: 300px;
+}
+.mid
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+ 
+    
+}
+header,footer
+{
+display: flex;
+justify-content: end;
+/*background-color: rgb(255, 255, 255);*/
+border: 1px solid rgb(231, 231, 231);
+}
+
+body
+{
+    display: flex;
+    flex-direction: column;
+    margin: 0px;
+    height: 100vh;
+
+}
+
+
+ul, li {
+    list-style-type: none;
+    display: inline-block;
+    margin-right: 1em;
+    padding: 0;
+    }
+
+#sub,#sub1
+{
+    background-color: rgb(87, 196, 255);
+    border-radius: 5px; 
+    height: 29px;
+}
+#sub:hover,#sub1:hover
+{
+    background-color: rgb(234, 5, 24);
+    border-radius: 5px; 
+    
+}
+
+.div1
+{
+flex-grow: 1;
+display: flex;
+flex-direction: column;
+padding: 10px;
+border-width: 1px;
+border-style: solid;
+border-radius: 10px;
+border-color: rgb(118, 118, 118);
+margin: 5px;
+}
+.div2
+{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 10px;
+    border-color: rgb(118, 118, 118);
+    margin: 5px;
+    
+
+    }
+
+.mi
+{
+    display: flex;
+    flex-grow: 1;
+
+}
+.logo
+{
+    /*margin-left: 90px;*/
+    justify-content: center;
+
+}
+
+.footer
+{
+margin: 0%;
+}
+
+section
+{
+background-color: aliceblue;
+    border-radius: 20;
+}
+/*
+input
+{
+    background-image: url('img/bac1.jpeg'); 
+    background-size: cover;
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-attachment: fixed; 
+    border-radius: 20;
+}*/

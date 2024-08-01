@@ -1,0 +1,411 @@
+.div1
+{
+flex-grow: 1;
+display: flex;
+flex-direction: column;
+padding: 10px;
+border-width: 1px;
+border-style: solid;
+border-radius: 10px;
+border-color: rgb(118, 118, 118);
+margin: 5px;
+min-height: 100vh;
+
+}
+
+.div2
+{
+    
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 10px;
+    border-color: rgb(118, 118, 118);
+    margin: 5px;
+    
+
+}
+
+.mi
+{
+    display: flex;
+    flex-grow: 1;
+    flex-direction:row ;
+
+}
+
+
+.publicinfo 
+{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    background-image: url('../images/28.jpeg'); /* Replace 'background-image.jpg' with your image file */
+    background-size: cover; /* Cover the entire viewport */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-attachment: fixed;
+    margin-top: 0px;
+    border-radius: 10px;
+    width: 355px;
+
+}
+.publicinfospan
+{
+    display: flex;
+    background-color: #ffffff;
+    flex-grow: 1;  
+    margin: 10px;
+    margin-top: 0px;
+    
+
+}
+
+
+.h1names
+{
+    color: rgb(17, 187, 255);
+    font-weight: bold; 
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+}
+#bibleplan_b
+{
+    background-color: rgb(230, 230, 230);
+}
+#biblereading
+{
+    display: flex;
+    flex-grow: 1;
+    flex-wrap: wrap;
+    display: none;
+}
+#anouncment_b
+{
+    background-color: #bce1fd;
+}
+
+
+.buttons
+{
+    margin-bottom: 0px;
+    margin: 10px ;
+    margin-bottom: 0px;
+    border-radius: 10px;
+    /*border: 1px solid #696969; */
+    background-color: rgb(230, 230, 230);
+    display: flex;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    width: max-content;
+    padding: 2px;
+    padding-bottom: 0px;
+    
+
+}
+
+.buttons button
+{
+    border: none;
+    width: 150px;
+    height: 30px;
+    
+    font-weight: bold;
+}
+
+#anouncment
+{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding: 0px;
+}
+.biblereadingsectiions
+{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    border: 1px;
+    border-style: solid;
+    border-color: #bbb;
+    background-color: hsl(210, 100%, 88%);
+    padding: 0px;
+    align-items: flex-start;
+    flex-grow: 1;
+    min-width: 150px;
+    margin: 5px; 
+}
+.Anouncmentsectiions
+{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    border: 1px;
+    border-style: solid;
+    border-color: #bbb;
+    background-color: hsl(210, 100%, 88%);
+    padding: 0px;
+    align-items: center;
+    flex-grow: 1;
+    margin: 5px;
+}
+
+.Anouncmentsectiions p,h3 ,.biblereadingsectiions p,h3
+{
+    margin: 0px;
+    padding: 5px;
+}
+
+.welcoming_text
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 140px;
+
+}
+.large_text
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+
+}
+.welcoming_text p
+{
+margin: 1px;
+padding: 1px;
+}
+
+.ministrysection
+{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.ministry-container
+{
+    max-width: 250px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    flex-grow: 1;
+    background-color: rgb(255, 255, 255);
+    padding: 10px;
+    margin: 10px;
+    justify-content: center;
+    align-items: center;
+    transition: 1s;
+    border-radius: 10px;
+    border: 1px solid #696969; 
+}
+
+.ministry-container:hover
+{
+    transition: 1s;
+    transform: scale(1.05); 
+    background-color: rgb(202, 230, 255);
+    box-shadow: 0 10px 20px rgb(0, 81, 147); 
+}
+
+.imgs
+{
+    
+    width: 230px;
+    transition: transform 1s ease-in-out;
+}
+.imgs:hover
+{
+    transition: 1s;
+    transform: scale(1.1); 
+}
+
+.twopoints
+{
+    display: flex;
+
+    
+}
+.twopoints span
+{
+
+    margin: 10px;
+    border-color: rgb(205, 205, 205);
+    border-width: 1px;
+    border-style: ridge;
+}
+
+.ministryinfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.ministryinfo::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../images/ministrybg2.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1;
+    opacity: 0.5; /* Set the initial opacity */
+    transition: opacity 0.5s ease; /* Transition property for smooth fade effect */
+}
+
+
+
+
+.motivation
+{
+    width: 100%;
+    display: flex;
+    border-radius: 10px;
+    /*background-color: hsla(0, 0%, 89%, 0.808);
+    border: 1px solid #696969; */
+
+}
+
+.dive h1
+{
+    font-family: 'Dancing Script', cursive; /* Use the Dancing Script font from Google Fonts */
+    font-size: 30px;
+    color: rgb(17, 190, 252);
+}
+.dive
+{
+    font-family: 'Arial', sans-serif; /* Specify the desired font */
+    font-size: 18px; /* Set the base font size */
+    line-height: 1.5; 
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    padding: 10px;
+    flex-grow: 1;
+
+
+}
+
+.container {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+
+section#hero {
+    padding: 50px 0;
+    text-align: center;
+}
+
+section#hero h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+section#hero p {
+    margin-bottom: 20px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #64b5fc;
+    color: #fff;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.adcontainer {
+  display: flex;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.location, .content {
+  flex: 1;
+  padding: 20px;
+}
+
+.location {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #1abc9c;
+  color: #fff;
+  border-radius: 10px 0 0 10px;
+}
+
+
+
+.location-details {
+  text-align: center;
+}
+
+.location h2 {
+  font-size: 1.8em;
+  margin-bottom: 10px;
+}
+
+.location p, .location address {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #fff;
+  color: #183269;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1.2em;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #f2f2f2;
+}
+
+.content {
+  background-color: #fff;
+  color: #333;
+  border-radius: 0 10px 10px 0;
+}
+
+.content h2 {
+  font-size: 1.8em;
+  margin-bottom: 10px;
+}
+
+.content p {
+  font-size: 1.2em;
+}
