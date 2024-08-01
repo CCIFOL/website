@@ -3,6 +3,7 @@ const connectDB = require('./config');
 const bodyParser = require('body-parser');
 const authRoutes = require('./routes/authRoutes');
 const dotenv = require('dotenv');
+const cors = require('cors'); // Import cors
 const mongoose = require('mongoose');
 
 dotenv.config();
@@ -11,6 +12,9 @@ const app = express();
 
 // Connect to MongoDB
 connectDB();
+
+// Enable CORS for all origins (adjust as needed for security)
+app.use(cors());
 
 const PORT = process.env.PORT || 5000;
 
