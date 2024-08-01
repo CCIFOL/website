@@ -39,8 +39,8 @@ document.getElementById('loginForm').addEventListener('submit', async (e) => {
       errorMsg.textContent = data.msg || 'An error occurred';
     } else {
       alert('Login successful');
-      // Handle successful login
-      window.location.href = '/dashboard.html'; // or another page
+      // Redirect to mm.html on successful login
+      window.location.href = 'dash.html';
     }
   } catch (err) {
     errorMsg.textContent = 'An error occurred';

@@ -5,11 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Inventory Management</title>
   <link rel="stylesheet" href="styles/dash.css">
-
 </head>
 <body>
   <div class="container">
     <h1>Inventory Management</h1>
+    
+    <!-- Search bar -->
+    <div class="search-bar">
+      <label for="search">Search:</label>
+      <input type="text" id="search" placeholder="Search items...">
+    </div>
+    
     <form id="inventoryForm">
       <div>
         <label for="name">Item Name:</label>
@@ -28,14 +34,30 @@
         <select id="category" name="category" required>
           <option value="" disabled selected>Select Category</option>
           <option value="Electronics">Electronics</option>
+          <option value="Kitchen Utensils">Kitchen Utensils</option>
           <option value="Furniture">Furniture</option>
-          <option value="Clothing">Clothing</option>
-          <option value="Stationery">Stationery</option>
+          <option value="Audio Equipment">Audio Equipment</option>
+          <option value="Office Supplies">Office Supplies</option>
+          <option value="Decorations">Decorations</option>
+          <option value="Books">Books</option>
+          <option value="Cleaning Supplies">Cleaning Supplies</option>
+          <option value="First Aid Supplies">First Aid Supplies</option>
+          <option value="Lighting Equipment">Lighting Equipment</option>
+          <option value="Children’s Ministry">Children’s Ministry</option>
+          <option value="Outreach Materials">Outreach Materials</option>
+          <option value="Security Equipment">Security Equipment</option>
+          <option value="Technology">Technology</option>
+          <option value="Event Decorations">Event Decorations</option>
+          <option value="Clothing and Uniforms">Clothing and Uniforms</option>
+          <option value="Utility Supplies">Utility Supplies</option>
+          <option value="Maintenance Tools">Maintenance Tools</option>
         </select>
       </div>
+      
       <button type="submit">Add Item</button>
       <p id="formMessage" class="success"></p>
     </form>
+    
     <table>
       <thead>
         <tr>
@@ -50,64 +72,6 @@
       </tbody>
     </table>
   </div>
-  <script>
-    document.getElementById('inventoryForm').addEventListener('submit', async (e) => {
-      e.preventDefault();
-      
-      const name = document.getElementById('name').value;
-      const dateGot = document.getElementById('dateGot').value;
-      const quantity = document.getElementById('quantity').value;
-      const category = document.getElementById('category').value;
-      const formMessage = document.getElementById('formMessage');
-
-      // Reset form message and input styles
-      formMessage.textContent = '';
-      const inputs = document.querySelectorAll('#inventoryForm input, #inventoryForm select');
-      inputs.forEach(input => input.classList.remove('error'));
-
-      const today = new Date().toISOString().split('T')[0];
-      if (dateGot > today) {
-        formMessage.textContent = 'Date cannot be in the future';
-        document.getElementById('dateGot').classList.add('error');
-        return;
-      }
-
-      if (quantity < 1) {
-        formMessage.textContent = 'Quantity must be at least 1';
-        document.getElementById('quantity').classList.add('error');
-        return;
-      }
-
-      try {
-        const res = await fetch('http://localhost:5000/api/inventory', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ name, dateGot, quantity, category }),
-        });
-
-        const data = await res.json();
-        if (res.status !== 200) {
-          formMessage.textContent = data.msg || 'An error occurred';
-        } else {
-          formMessage.textContent = 'Item added successfully';
-          addItemToTable(data.item);
-          document.getElementById('inventoryForm').reset();
-        }
-      } catch (err) {
-        formMessage.textContent = 'An error occurred';
-      }
-    });
-
-    const addItemToTable = (item) => {
-      const newRow = document.createElement('tr');
-      newRow.innerHTML = `
-        <td>${item.name}</td>
-        <td>${item.dateGot}</td>
-        <td>${item.quantity}</td>
-        <td>${item.category}</td>
-      `;
-      document.getElementById('inventoryTable').appendChild(newRow);
-    };
-  </script>
+  <script src="js/dash.js"></script>
 </body>
 </html>
