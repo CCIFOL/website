@@ -27,7 +27,7 @@
       const errorMsg = document.getElementById('errorMsg');
 
       try {
-        const res = await fetch('/api/auth/login', {
+        const res = await fetch('https://website-bpjn.onrender.com/api/auth/login', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ emailOrUsername, password }),
