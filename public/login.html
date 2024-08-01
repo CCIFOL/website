@@ -1,40 +1,49 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="images/logo_2d_gCx_icon.ico" type="image/x-icon">
-    <title>C.C.I. the fountain of life church</title>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="styles/styles.css">
-    <link rel="stylesheet" href="styles/home.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
 </head>
 <body>
-<section class="mid">
-
-    <form class="log" id="loginform">
-        <div id="message"></div>
-        <img class ="logo" src="images/nlogo.png" alt="church logo" height="100px">
-        <br>
-        <label for ="username" >Username</label>
-        <input id="username" type="text" placeholder="Enter your username" name="email" required> 
-        <label for="password" >Password</label>
-        <input id="password" type="password" name="password" placeholder="Enter your password" required> 
-        <br>
-        <input type="submit" id="sub" name="loginSubmit" value="Login">
-        <br>
-        <br>
-        <br>
-        
-
-    </form>
-
-    
-</section>
-<footer>
-    <div class="footer-content" style="height: 30px;">
-        <p>C.C.I. The Fountain of Life Church. All Rights Reserved.</p>
+  <h1>Login</h1>
+  <form id="loginForm">
+    <div>
+      <label for="emailOrUsername">Email or Username:</label>
+      <input type="text" id="emailOrUsername" name="emailOrUsername" required>
     </div>
-</footer>
-<script src="js/login.js"></script>
+    <div>
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+    </div>
+    <button type="submit">Login</button>
+    <p id="errorMsg" style="color: red;"></p>
+  </form>
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const emailOrUsername = document.getElementById('emailOrUsername').value;
+      const password = document.getElementById('password').value;
+      const errorMsg = document.getElementById('errorMsg');
+
+      try {
+        const res = await fetch('/api/auth/login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ emailOrUsername, password }),
+        });
+
+        const data = await res.json();
+        if (res.status !== 200) {
+          errorMsg.textContent = data.msg || 'An error occurred';
+        } else {
+          alert('Login successful');
+          // Handle successful login
+        }
+      } catch (err) {
+        errorMsg.textContent = 'An error occurred';
+      }
+    });
+  </script>
 </body>
 </html>
