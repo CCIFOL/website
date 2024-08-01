@@ -4,61 +4,32 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Register</title>
+  <link rel="stylesheet" href="styles/reg.css">
 </head>
 <body>
-  <h1>Register</h1>
-  <form id="registerForm">
-    <div>
-      <label for="username">Username:</label>
-      <input type="text" id="username" name="username" required>
-    </div>
-    <div>
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required>
-    </div>
-    <div>
-      <label for="password">Password:</label>
-      <input type="password" id="password" name="password" required>
-    </div>
-    <button type="submit">Register</button>
-    <p id="errorMsg" style="color: red;"></p>
-  </form>
-  <script>
-    document.getElementById('registerForm').addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const username = document.getElementById('username').value;
-      const email = document.getElementById('email').value;
-      const password = document.getElementById('password').value;
-      const errorMsg = document.getElementById('errorMsg');
-
-      if (username.length < 4) {
-        errorMsg.textContent = 'Username must be at least 4 characters long';
-        return;
-      }
-
-      if (password.length < 6) {
-        errorMsg.textContent = 'Password must be at least 6 characters long';
-        return;
-      }
-
-      try {
-        const res = await fetch('https://website-bpjn.onrender.com/api/auth/register', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ username, email, password }),
-        });
-
-        const data = await res.json();
-        if (res.status !== 200) {
-          errorMsg.textContent = data.msg || 'An error occurred';
-        } else {
-          alert('Registration successful');
-          window.location.href = '/login.html';
-        }
-      } catch (err) {
-        errorMsg.textContent = 'An error occurred';
-      }
-    });
-  </script>
+  <div>
+    <h1>Register</h1>
+    <form id="registerForm">
+      <div>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+      </div>
+      <div>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+      </div>
+      <div>
+        <label for="confirmPassword">Confirm Password:</label>
+        <input type="password" id="confirmPassword" name="confirmPassword" required>
+      </div>
+      <button type="submit">Register</button>
+      <p id="errorMsg"></p>
+    </form>
+  </div>
+  <script src ="js/reg.js"></script>
 </body>
 </html>

@@ -1,65 +1,48 @@
-document.addEventListener('DOMContentLoaded', function () {
-    var loginForm = document.getElementById('loginform');
+document.getElementById('loginForm').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const emailOrUsername = document.getElementById('emailOrUsername').value;
+  const password = document.getElementById('password').value;
+  const errorMsg = document.getElementById('errorMsg');
+  const inputs = document.querySelectorAll('input');
 
-    loginForm.addEventListener('submit', function (event) {
-        event.preventDefault();
-        var username = document.getElementById('username').value;
-        var password = document.getElementById('password').value;
-        var loginformData = {
-            username: username,
-            password: password
-        };
+  // Reset all inputs
+  inputs.forEach(input => input.classList.remove('error'));
 
-        fetch('https://baze.pythonanywhere.com/login', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(loginformData)
-        })
-        .then(response => {
-            if (response.ok) {
-                return response.json();
-            } else {
+  let hasError = false;
 
-                displayMessage('Login failed. Please check your credentials.');
-                throw new Error('Login failed. Please check your credentials.');
-                
-            }
-        })
-        .then(data => {
+  // Simple validation for login
+  if (!emailOrUsername) {
+    errorMsg.textContent = 'Email or Username is required';
+    document.getElementById('emailOrUsername').classList.add('error');
+    hasError = true;
+  }
 
+  if (!password) {
+    errorMsg.textContent = 'Password is required';
+    document.getElementById('password').classList.add('error');
+    hasError = true;
+  }
 
-            displayMessage('Login successful');
-            localStorage.setItem('firstName', data.systemRank);
-            localStorage.setItem('idNo', data.policeId);
-            localStorage.setItem('accountStatus', data.station);
-            redirectToHomepage();
-            
-        })
-        .catch(error => {
+  if (hasError) {
+    return;
+  }
 
-            displayMessage(error);
-        });
+  try {
+    const res = await fetch('https://website-bpjn.onrender.com/api/auth/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ emailOrUsername, password }),
     });
+
+    const data = await res.json();
+    if (res.status !== 200) {
+      errorMsg.textContent = data.msg || 'An error occurred';
+    } else {
+      alert('Login successful');
+      // Handle successful login
+      window.location.href = '/dashboard.html'; // or another page
+    }
+  } catch (err) {
+    errorMsg.textContent = 'An error occurred';
+  }
 });
-
-var mess = document.getElementById("messag");
-
-function displayMessage(message)
-{
-
-    $('#message').text("");
-    $('#message').text(message);
-}
-
-function backtonone()
-{
-    mess.style.display = "none";
-}
-
-function redirectToHomepage()
-{
-
-    window.location.href = 'home.html';
-}
