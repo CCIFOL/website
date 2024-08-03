@@ -1,0 +1,422 @@
+/* Root Variables for easy theming */
+:root {
+    --primary-color: #1e90ff;
+    --secondary-color: #002244;
+    --text-light: #f0f2f5;
+    --text-dark: #333;
+    --background-light: #fff;
+    --background-dark: #f0f2f5;
+    --shadow-light: rgba(0, 0, 0, 0.1);
+    --shadow-dark: rgba(0, 0, 0, 0.3);
+}
+
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Your Fancy Font', sans-serif;
+    color: var(--text-dark);
+    background: var(--background-light);
+    line-height: 1.6;
+}
+
+/* Header Styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: linear-gradient(90deg, var(--secondary-color), var(--primary-color));
+    color: var(--text-light);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 8px var(--shadow-light);
+    transition: background 0.3s ease-in-out;
+}
+
+header img.logo {
+    height: 50px;
+}
+
+header nav a {
+    color: var(--text-light);
+    text-decoration: none;
+    margin: 0 1rem;
+    transition: color 0.3s, text-shadow 0.3s;
+    font-weight: bold;
+}
+
+header nav a:hover {
+    color: var(--primary-color);
+    text-shadow: 0 0 10px var(--primary-color);
+}
+
+header #menu_b {
+    display: none;
+}
+
+header #menu {
+    display: none;
+}
+
+/* Video Background */
+.video-background {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#myVideo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    filter: brightness(50%);
+}
+
+.namez {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    text-align: center;
+    color: var(--text-light);
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.namez h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    animation: fadeInDown 2s ease-in-out;
+}
+
+.namez p {
+    font-size: 1.5rem;
+    animation: fadeInUp 2s ease-in-out;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Slideshow */
+.slideshow-container {
+    max-width: 100%;
+    position: relative;
+    margin: auto;
+}
+
+.mySlides {
+    display: none;
+}
+
+.fade {
+    animation: fade 1.5s;
+}
+
+@keyframes fade {
+    from { opacity: .4 }
+    to { opacity: 1 }
+}
+
+.dot-container {
+    text-align: center;
+    padding: 2rem;
+    background: rgba(0,0,0,0.5);
+}
+
+.dot {
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.dot:hover, .dot.active {
+    background-color: var(--primary-color);
+}
+
+/* Main Section */
+main {
+    padding: 2rem;
+    margin-top: 100vh; /* Adjusting for fixed header */
+}
+
+/* Hero Section */
+.hero-section {
+    padding: 4rem 2rem;
+    background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+    color: var(--text-light);
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px var(--shadow-dark);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: -1;
+}
+
+.hero-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    animation: slideIn 1s ease-in-out;
+}
+
+.hero-section p {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    animation: slideIn 1.5s ease-in-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Ministry Info */
+.ministry-info {
+    padding: 4rem 2rem;
+    background: var(--background-light);
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: var(--secondary-color);
+    position: relative;
+    display: inline-block;
+    animation: underline 0.5s ease-in-out;
+}
+
+@keyframes underline {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--primary-color);
+    border-radius: 2px;
+}
+
+.ministry-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.ministry-item {
+    background: var(--background-light);
+    padding: 1.5rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px var(--shadow-light);
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.ministry-item img {
+    width: 100%;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+.ministry-item h3 {
+    margin: 1rem 0;
+    color: var(--text-dark);
+}
+
+.ministry-item p {
+    color: #555;
+    font-size: 1rem;
+}
+
+.ministry-item .btn {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.5rem 1.5rem;
+    background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+    color: var(--text-light);
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.ministry-item .btn:hover {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    box-shadow: 0 4px 10px var(--shadow-dark);
+}
+
+.ministry-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 20px var(--shadow-dark);
+}
+
+.ministry-item:hover img {
+    transform: scale(1.05);
+}
+
+/* Location and Meetings */
+.adcontainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding: 4rem 2rem;
+    background: var(--background-light);
+}
+
+.adcontainer .location, .adcontainer .content {
+    flex: 1 1 45%;
+    min-width: 300px;
+    padding: 1.5rem;
+    background: var(--background-light);
+    border-radius: 15px;
+    box-shadow: 0 4px 8px var(--shadow-light);
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.adcontainer img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
+    transition: transform 0.3s;
+}
+
+.adcontainer h2 {
+    margin-top: 1rem;
+    color: var(--text-dark);
+}
+
+.adcontainer p {
+    color: #555;
+    font-size: 1rem;
+}
+
+.adcontainer .btn-directions, .adcontainer .btn-learn-more {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.5rem 1.5rem;
+    background: var(--primary-color);
+    color: var(--text-light);
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.adcontainer .btn-directions:hover, .adcontainer .btn-learn-more:hover {
+    background: #003366;
+    transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+    padding: 1.5rem;
+    background: var(--secondary-color);
+    color: var(--text-light);
+    text-align: center;
+    box-shadow: 0 -4px 8px var(--shadow-light);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    header nav {
+        display: none;
+    }
+
+    header #menu_b {
+        display: block;
+    }
+
+    #menu {
+        display: block;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 250px;
+        background: var(--secondary-color);
+        color: var(--text-light);
+        box-shadow: 0 4px 10px var(--shadow-dark);
+        z-index: 1000;
+    }
+
+    #menu nav a {
+        display: block;
+        padding: 1rem;
+        text-align: center;
+    }
+
+    .adcontainer {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-section h2 {
+        font-size: 2rem;
+    }
+
+    .hero-section p {
+        font-size: 1rem;
+    }
+}
