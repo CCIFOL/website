@@ -8,7 +8,6 @@ const eventsRouter = require('./routes/events');
 
 const dotenv = require('dotenv');
 const cors = require('cors');
-const mongoose = require('mongoose');
 
 dotenv.config();
 
