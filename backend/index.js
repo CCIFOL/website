@@ -7,7 +7,7 @@ const mediaRouter = require('./routes/media');
 const eventsRouter = require('./routes/events');
 
 const dotenv = require('dotenv');
-const cors = require('cors'); // Import cors
+const cors = require('cors');
 const mongoose = require('mongoose');
 
 dotenv.config();
