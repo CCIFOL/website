@@ -28,7 +28,7 @@ exports.createEvent = async (req, res) => {
 // Delete an event
 exports.deleteEvent = async (req, res) => {
   try {
-    const event = await Event.findOne({ title: req.params.id }); 
+    const event = await Event.findOne({ title: req.body.title }); 
     if (!event) {
       return res.status(404).json({ message: 'Event not found' });
     }
