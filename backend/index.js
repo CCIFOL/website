@@ -1,10 +1,5 @@
 const express = require('express');
-const connectDB = require('./config');
 const bodyParser = require('body-parser');
-const authRoutes = require('./routes/authRoutes');
-const inventoryRoutes = require('./routes/inventoryRoutes');
-const mediaRouter = require('./routes/media');
-const eventsRouter = require('./routes/events');
 const contactRoutes = require('./routes/contactRoutes');
 
 const dotenv = require('dotenv');
@@ -14,8 +9,6 @@ dotenv.config();
 
 const app = express();
 
-// Connect to MongoDB
-connectDB();
 
 // Enable CORS for all origins (adjust as needed for security)
 app.use(cors());
@@ -23,10 +16,6 @@ app.use(cors());
 const PORT = process.env.PORT || 5000;
 
 app.use(bodyParser.json());
-app.use('/api/auth', authRoutes);
-app.use('/api/inventory', inventoryRoutes);
-app.use('/api/media', mediaRouter);
-app.use('/api/events', eventsRouter);
 app.use('/api/contact', contactRoutes);
 
 
