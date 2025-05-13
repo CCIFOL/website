@@ -5,6 +5,7 @@ const authRoutes = require('./routes/authRoutes');
 const inventoryRoutes = require('./routes/inventoryRoutes');
 const mediaRouter = require('./routes/media');
 const eventsRouter = require('./routes/events');
+const contactRoutes = require('./routes/contactRoutes');
 
 const dotenv = require('dotenv');
 const cors = require('cors');
@@ -26,6 +27,8 @@ app.use('/api/auth', authRoutes);
 app.use('/api/inventory', inventoryRoutes);
 app.use('/api/media', mediaRouter);
 app.use('/api/events', eventsRouter);
+app.use('/api/contact', contactRoutes);
+
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
