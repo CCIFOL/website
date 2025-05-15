@@ -9,7 +9,7 @@ const departmentEmails = {
 
 exports.sendMessage = async (req, res) => {
   const { name, email, phone, type, message } = req.body;
-
+console.log("i ,,,,,,,,,,,,,,,,n")
   if (!name || !email || !message || !type) {
     return res.status(400).json({ error: 'All fields are required.' });
   }
@@ -40,5 +40,6 @@ exports.sendMessage = async (req, res) => {
     res.status(200).json({ message: 'Message sent successfully.' });
   } catch (err) {
     res.status(500).json({ error: 'Failed to send message.' });
+    console.log(err.message)
   }
 };
