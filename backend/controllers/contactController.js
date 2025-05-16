@@ -1,7 +1,7 @@
 const nodemailer = require('nodemailer');
 
 const departmentEmails = {
-  general: 'kinyi9461@gmail,com',
+  general: 'kinyi9461@gmail.com',
   prayer: 'prayer@ccifountainoflife.org',
   testimony: 'testimony@ccifountainoflife.org',
   media: 'media@ccifountainoflife.org',
