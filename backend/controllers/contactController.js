@@ -1,7 +1,7 @@
 const nodemailer = require('nodemailer');
 
 const departmentEmails = {
-  general: 'kinyi9461@gmail.com',
+  general: 'info@ccifountainoflife.org',
   prayer: 'prayer@ccifountainoflife.org',
   testimony: 'testimony@ccifountainoflife.org',
   media: 'media@ccifountainoflife.org',
@@ -9,7 +9,6 @@ const departmentEmails = {
 
 exports.sendMessage = async (req, res) => {
   const { name, email, phone, type, message } = req.body;
-console.log("i ,,,,,,,,,,,,,,,,n")
   if (!name || !email || !message || !type) {
     return res.status(400).json({ error: 'All fields are required.' });
   }
